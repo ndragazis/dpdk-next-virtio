@@ -132,7 +132,7 @@ ifeq ($(CONFIG_RTE_EAL_VFIO),y)
 _LDLIBS-$(CONFIG_RTE_LIBRTE_FSLMC_BUS)      += -lrte_bus_fslmc
 endif
 
-ifeq ($(CONFIG_RTE_LIBRTE_VHOST),y)
+ifeq ($(CONFIG_RTE_LIBRTE_VHOST)$(CONFIG_RTE_LIBRTE_VIRTIO_VHOST_USER),yy)
 _LDLIBS-y += --no-as-needed
 _LDLIBS-y += -lrte_virtio_vhost_user
 _LDLIBS-y += --as-needed
